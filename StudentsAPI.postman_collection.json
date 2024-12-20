@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "059e24ea-bcea-4f9f-8bd2-bcdd7aa5be3c",
+		"name": "StudentsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33315619"
+	},
+	"item": [
+		{
+			"name": "Get Single Student data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Length is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Length\");\r",
+							"});\r",
+							"pm.test(\"X-Powered-By is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-Powered-By\");\r",
+							"});\r",
+							"pm.test(\"Access-Control-Allow-Origin is present\", function () {\r",
+							"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"pm.expect(jsonData.subjects).to.include(\"Math\");\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Varify the multiple property in the Array \",() =>{\r",
+							"pm.expect(jsonData.subjects).to.have.members([\"Math\",\"Physics\",\"English\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"//pm.expect(jsonData).to.be.an(\"object\");\r",
+							"pm.expect(jsonData.name).to.eql(\"John Doe\");\r",
+							"pm.expect(jsonData.id).to.eql(\"1\");\r",
+							"pm.expect(jsonData.age).to.eql(18);\r",
+							"pm.expect(jsonData.subjects[0]).to.eql(\"Math\");\r",
+							"pm.expect(jsonData.subjects[1]).to.eql(\"Physics\");\r",
+							"pm.expect(jsonData.subjects[2]).to.eql(\"English\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"protocolVersion": "http2"
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all students data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Length is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Length\");\r",
+							"});\r",
+							"pm.test(\"X-Powered-By is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-Powered-By\");\r",
+							"});\r",
+							"pm.test(\"Access-Control-Allow-Origin is present\", function () {\r",
+							"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"pm.expect(jsonData.subjects).to.include(\"Math\");\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Varify the multiple property in the Array \",() =>{\r",
+							"pm.expect(jsonData.subjects).to.have.members([\"Math\",\"Physics\",\"English\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"//pm.expect(jsonData).to.be.an(\"object\");\r",
+							"pm.expect(jsonData.name).to.eql(\"John Doe\");\r",
+							"pm.expect(jsonData.id).to.eql(\"1\");\r",
+							"pm.expect(jsonData.age).to.eql(18);\r",
+							"pm.expect(jsonData.subjects[0]).to.eql(\"Math\");\r",
+							"pm.expect(jsonData.subjects[1]).to.eql(\"Physics\");\r",
+							"pm.expect(jsonData.subjects[2]).to.eql(\"English\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New student data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Length is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Length\");\r",
+							"});\r",
+							"pm.test(\"X-Powered-By is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-Powered-By\");\r",
+							"});\r",
+							"pm.test(\"Access-Control-Allow-Origin is present\", function () {\r",
+							"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"pm.expect(jsonData.subjects).to.include(\"Math\");\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Varify the multiple property in the Array \",() =>{\r",
+							"pm.expect(jsonData.subjects).to.have.members([\"Math\",\"Physics\",\"English\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"//pm.expect(jsonData).to.be.an(\"object\");\r",
+							"pm.expect(jsonData.name).to.eql(\"John Doe\");\r",
+							"pm.expect(jsonData.id).to.eql(\"1\");\r",
+							"pm.expect(jsonData.age).to.eql(18);\r",
+							"pm.expect(jsonData.subjects[0]).to.eql(\"Math\");\r",
+							"pm.expect(jsonData.subjects[1]).to.eql(\"Physics\");\r",
+							"pm.expect(jsonData.subjects[2]).to.eql(\"English\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"KamranTusher\",\r\n    \"age\": 18,\r\n    \"grade\": \"12th\",\r\n    \"subjects\": [\r\n        \"Psychology\",\r\n        \"Environmental Science\",\r\n        \"Political Science\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the 'New student'data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Length is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Length\");\r",
+							"});\r",
+							"pm.test(\"X-Powered-By is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-Powered-By\");\r",
+							"});\r",
+							"pm.test(\"Access-Control-Allow-Origin is present\", function () {\r",
+							"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"pm.expect(jsonData.subjects).to.include(\"Math\");\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Varify the multiple property in the Array \",() =>{\r",
+							"pm.expect(jsonData.subjects).to.have.members([\"Math\",\"Physics\",\"English\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"//pm.expect(jsonData).to.be.an(\"object\");\r",
+							"pm.expect(jsonData.name).to.eql(\"John Doe\");\r",
+							"pm.expect(jsonData.id).to.eql(\"1\");\r",
+							"pm.expect(jsonData.age).to.eql(18);\r",
+							"pm.expect(jsonData.subjects[0]).to.eql(\"Math\");\r",
+							"pm.expect(jsonData.subjects[1]).to.eql(\"Physics\");\r",
+							"pm.expect(jsonData.subjects[2]).to.eql(\"English\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"LamishaKamranTusher\",\r\n    \"age\": 18,\r\n    \"grade\": \"12th\",\r\n    \"subjects\": [\r\n        \"Economics\",\r\n        \"Environmental Science\",\r\n        \"Political Science\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/2f05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"2f05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete  Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Length is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Length\");\r",
+							"});\r",
+							"pm.test(\"X-Powered-By is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-Powered-By\");\r",
+							"});\r",
+							"pm.test(\"Access-Control-Allow-Origin is present\", function () {\r",
+							"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"pm.expect(jsonData.subjects).to.include(\"Math\");\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"Varify the multiple property in the Array \",() =>{\r",
+							"pm.expect(jsonData.subjects).to.have.members([\"Math\",\"Physics\",\"English\"]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test the data type of the response\",() =>{\r",
+							"//pm.expect(jsonData).to.be.an(\"object\");\r",
+							"pm.expect(jsonData.name).to.eql(\"John Doe\");\r",
+							"pm.expect(jsonData.id).to.eql(\"1\");\r",
+							"pm.expect(jsonData.age).to.eql(18);\r",
+							"pm.expect(jsonData.subjects[0]).to.eql(\"Math\");\r",
+							"pm.expect(jsonData.subjects[1]).to.eql(\"Physics\");\r",
+							"pm.expect(jsonData.subjects[2]).to.eql(\"English\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students/2f05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"2f05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/students/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cookie is present\", function () {\r",
+							"    pm.response.to.have.header(\"Cookie\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"protocolVersion": "http2"
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
